@@ -1214,3 +1214,17 @@ Processing by PortfoliosController#index as HTML
 Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/portfolios/new" for ::1 at 2019-07-29 15:08:50 -0700
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/portfolios/new" for ::1 at 2019-07-29 15:15:36 -0700
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
