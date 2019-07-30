@@ -1595,3 +1595,39 @@ Processing by PortfoliosController#show as HTML
 Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms)
 
 
+  [1m[36mPortfolio Load (2.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Destroy (4.0ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = ?[0m  [["id", 9]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPortfolio Destroy (0.3ms)[0m  [1m[31mDELETE FROM "portfolios" WHERE "portfolios"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/portfolios" for ::1 at 2019-07-30 15:40:53 -0700
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolios" for ::1 at 2019-07-30 15:45:24 -0700
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolios" for ::1 at 2019-07-30 15:46:01 -0700
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/portfolios_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolios" for ::1 at 2019-07-30 15:46:09 -0700
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/controllers/portfolios_controller.rb:52: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/portfolios_controller.rb:52: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolios" for ::1 at 2019-07-30 15:49:05 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.6ms)
+
+
