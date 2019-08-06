@@ -3105,3 +3105,77 @@ Migrating to AddPostStatusToBlogs (20190801234204)
   [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "fuck"], ["LIMIT", 1]]
   [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?)[0m  [["title", "fuck"], ["body", "your ma"], ["created_at", "2019-08-01 23:52:18.776824"], ["updated_at", "2019-08-01 23:52:18.776824"], ["slug", "fuck-31e1afe5-5603-471d-b588-8637ddbbab94"]]
   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Create (0.7ms)[0m  [1m[32mINSERT INTO "blogs" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-08-06 04:28:23.692945"], ["updated_at", "2019-08-06 04:28:23.692945"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/blogs" for ::1 at 2019-08-05 21:29:54 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered blogs/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 216ms (Views: 209.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/blogs/new" for ::1 at 2019-08-05 21:34:31 -0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (11.4ms)
+  Rendered blogs/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 41ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/blogs" for ::1 at 2019-08-05 21:34:35 -0700
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BB/vLeK+ELfOBZDUL/ut6il3QPSV+NVi2cRvAUItSlvCbfMoKP07AEgAScZPgvxj3wbj2VygP3GVHjcnWxcXbA==", "blog"=>{"title"=>"", "body"=>""}, "commit"=>"Create Blog"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/blogs_controller.rb:30
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (1.8ms)
+  Rendered blogs/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/blogs" for ::1 at 2019-08-05 21:34:51 -0700
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2PEWvdHuiab3dJxACmgGJYkoxCBHrffjTLijgviIRW7tK4RfFnNy+eLgNNAOFmo+JEJrpuTtDPQlnr/kv0Bc1Q==", "blog"=>{"title"=>"you", "body"=>"suck"}, "commit"=>"Create Blog"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:30
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "you"], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:30
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?)[0m  [["title", "you"], ["body", "suck"], ["created_at", "2019-08-06 04:34:51.367350"], ["updated_at", "2019-08-06 04:34:51.367350"], ["slug", "you"]]
+  ↳ app/controllers/blogs_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:30
+Redirected to http://localhost:3000/blogs/you
+Completed 302 Found in 49ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/blogs/you" for ::1 at 2019-08-05 21:34:51 -0700
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"you"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."slug" = ? LIMIT ?[0m  [["slug", "you"], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:67
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/blogs" for ::1 at 2019-08-05 21:34:53 -0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered blogs/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
