@@ -3240,3 +3240,1142 @@ Migrating to AddTopicReferenceToBlogs (20190806055246)
   [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."topic_id" = ? LIMIT ?[0m  [["topic_id", 1], ["LIMIT", 11]]
   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/portfolios" for ::1 at 2019-08-07 17:15:29 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 223ms (Views: 214.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-08-07 17:15:43 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.9ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 46ms (Views: 31.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-07 17:16:32 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190806055246)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190731001522),
+(20190731002319),
+(20190806054540),
+(20190801234204);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2019-08-08 00:19:24.739237"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-08-08 00:19:24.741372"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:19:24.751821"], ["updated_at", "2019-08-08 00:19:24.751821"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:19:24.753687"], ["updated_at", "2019-08-08 00:19:24.753687"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:19:24.755520"], ["updated_at", "2019-08-08 00:19:24.755520"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-0"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 0"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.831265"], ["updated_at", "2019-08-08 00:19:24.831265"], ["slug", "my-blog-post-0"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 1"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.835230"], ["updated_at", "2019-08-08 00:19:24.835230"], ["slug", "my-blog-post-1"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 2"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.838907"], ["updated_at", "2019-08-08 00:19:24.838907"], ["slug", "my-blog-post-2"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-3"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 3"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.842003"], ["updated_at", "2019-08-08 00:19:24.842003"], ["slug", "my-blog-post-3"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-4"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 4"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.844879"], ["updated_at", "2019-08-08 00:19:24.844879"], ["slug", "my-blog-post-4"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-5"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 5"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.847658"], ["updated_at", "2019-08-08 00:19:24.847658"], ["slug", "my-blog-post-5"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-6"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 6"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.850341"], ["updated_at", "2019-08-08 00:19:24.850341"], ["slug", "my-blog-post-6"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-7"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 7"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.853005"], ["updated_at", "2019-08-08 00:19:24.853005"], ["slug", "my-blog-post-7"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-8"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 8"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.856210"], ["updated_at", "2019-08-08 00:19:24.856210"], ["slug", "my-blog-post-8"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-9"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 9"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:19:24.859767"], ["updated_at", "2019-08-08 00:19:24.859767"], ["slug", "my-blog-post-9"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 0"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:19:24.865750"], ["updated_at", "2019-08-08 00:19:24.865750"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 1"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:19:24.867447"], ["updated_at", "2019-08-08 00:19:24.867447"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 2"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:19:24.869261"], ["updated_at", "2019-08-08 00:19:24.869261"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 3"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:19:24.870963"], ["updated_at", "2019-08-08 00:19:24.870963"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 4"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:19:24.872530"], ["updated_at", "2019-08-08 00:19:24.872530"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.880262"], ["updated_at", "2019-08-08 00:19:24.880262"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 1"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.882463"], ["updated_at", "2019-08-08 00:19:24.882463"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 2"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.884274"], ["updated_at", "2019-08-08 00:19:24.884274"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 3"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.886006"], ["updated_at", "2019-08-08 00:19:24.886006"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 4"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.887792"], ["updated_at", "2019-08-08 00:19:24.887792"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 5"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.889460"], ["updated_at", "2019-08-08 00:19:24.889460"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 6"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.891382"], ["updated_at", "2019-08-08 00:19:24.891382"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 7"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.893328"], ["updated_at", "2019-08-08 00:19:24.893328"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 8"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:19:24.894754"], ["updated_at", "2019-08-08 00:19:24.894754"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2019-08-08 00:25:06.188790"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-08-08 00:25:06.192441"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:25:06.203059"], ["updated_at", "2019-08-08 00:25:06.203059"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:25:06.205366"], ["updated_at", "2019-08-08 00:25:06.205366"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:25:06.207179"], ["updated_at", "2019-08-08 00:25:06.207179"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-0"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 0"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.277644"], ["updated_at", "2019-08-08 00:25:06.277644"], ["slug", "my-blog-post-0"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 1"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.282339"], ["updated_at", "2019-08-08 00:25:06.282339"], ["slug", "my-blog-post-1"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 2"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.285872"], ["updated_at", "2019-08-08 00:25:06.285872"], ["slug", "my-blog-post-2"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-3"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 3"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.289347"], ["updated_at", "2019-08-08 00:25:06.289347"], ["slug", "my-blog-post-3"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-4"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 4"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.292583"], ["updated_at", "2019-08-08 00:25:06.292583"], ["slug", "my-blog-post-4"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-5"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 5"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.295925"], ["updated_at", "2019-08-08 00:25:06.295925"], ["slug", "my-blog-post-5"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-6"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 6"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.298995"], ["updated_at", "2019-08-08 00:25:06.298995"], ["slug", "my-blog-post-6"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-7"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 7"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.301905"], ["updated_at", "2019-08-08 00:25:06.301905"], ["slug", "my-blog-post-7"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-8"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 8"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.304630"], ["updated_at", "2019-08-08 00:25:06.304630"], ["slug", "my-blog-post-8"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-9"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 9"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:25:06.307383"], ["updated_at", "2019-08-08 00:25:06.307383"], ["slug", "my-blog-post-9"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 0"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:25:06.312532"], ["updated_at", "2019-08-08 00:25:06.312532"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 1"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:25:06.314255"], ["updated_at", "2019-08-08 00:25:06.314255"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 2"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:25:06.315815"], ["updated_at", "2019-08-08 00:25:06.315815"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 3"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:25:06.317903"], ["updated_at", "2019-08-08 00:25:06.317903"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 4"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:25:06.319841"], ["updated_at", "2019-08-08 00:25:06.319841"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.327286"], ["updated_at", "2019-08-08 00:25:06.327286"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 1"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.329380"], ["updated_at", "2019-08-08 00:25:06.329380"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 2"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.331112"], ["updated_at", "2019-08-08 00:25:06.331112"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 3"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.332798"], ["updated_at", "2019-08-08 00:25:06.332798"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 4"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.334440"], ["updated_at", "2019-08-08 00:25:06.334440"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 5"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.336247"], ["updated_at", "2019-08-08 00:25:06.336247"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 6"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.338363"], ["updated_at", "2019-08-08 00:25:06.338363"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 7"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.340306"], ["updated_at", "2019-08-08 00:25:06.340306"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 8"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.342147"], ["updated_at", "2019-08-08 00:25:06.342147"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "Angular"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.343765"], ["updated_at", "2019-08-08 00:25:06.343765"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "Ruby On Rails"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:25:06.345543"], ["updated_at", "2019-08-08 00:25:06.345543"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "blogs"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar, "status" integer, "topic_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_blogs_on_slug" ON "blogs" ("slug")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_blogs_on_topic_id" ON "blogs" ("topic_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendly_id_slugs"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios"[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "subtitle" varchar, "body" text, "main_image" text, "thumb_image" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "skills"[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "percent_utilized" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:49
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "topics"[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "topics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2019-08-08 00:26:22.445054"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-08-08 00:26:22.447758"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.3ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:26:22.459335"], ["updated_at", "2019-08-08 00:26:22.459335"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:26:22.461589"], ["updated_at", "2019-08-08 00:26:22.461589"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Create (0.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Topic #(topic)"], ["created_at", "2019-08-08 00:26:22.463264"], ["updated_at", "2019-08-08 00:26:22.463264"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-0"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 0"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.529244"], ["updated_at", "2019-08-08 00:26:22.529244"], ["slug", "my-blog-post-0"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 1"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.533095"], ["updated_at", "2019-08-08 00:26:22.533095"], ["slug", "my-blog-post-1"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 2"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.536832"], ["updated_at", "2019-08-08 00:26:22.536832"], ["slug", "my-blog-post-2"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-3"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 3"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.541665"], ["updated_at", "2019-08-08 00:26:22.541665"], ["slug", "my-blog-post-3"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-4"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 4"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.545483"], ["updated_at", "2019-08-08 00:26:22.545483"], ["slug", "my-blog-post-4"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-5"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 5"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.548891"], ["updated_at", "2019-08-08 00:26:22.548891"], ["slug", "my-blog-post-5"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-6"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 6"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.551973"], ["updated_at", "2019-08-08 00:26:22.551973"], ["slug", "my-blog-post-6"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-7"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 7"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.568234"], ["updated_at", "2019-08-08 00:26:22.568234"], ["slug", "my-blog-post-7"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-8"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 8"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.571511"], ["updated_at", "2019-08-08 00:26:22.571511"], ["slug", "my-blog-post-8"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" ORDER BY "topics"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."id" IS NOT NULL AND "blogs"."slug" = ? LIMIT ?[0m  [["slug", "my-blog-post-9"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mTopic Load (0.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "slug", "topic_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Blog Post 9"], ["body", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"], ["created_at", "2019-08-08 00:26:22.574700"], ["updated_at", "2019-08-08 00:26:22.574700"], ["slug", "my-blog-post-9"], ["topic_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 0"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:26:22.580496"], ["updated_at", "2019-08-08 00:26:22.580496"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 1"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:26:22.582391"], ["updated_at", "2019-08-08 00:26:22.582391"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 2"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:26:22.584125"], ["updated_at", "2019-08-08 00:26:22.584125"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 3"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:26:22.586050"], ["updated_at", "2019-08-08 00:26:22.586050"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Create (0.2ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rails 4"], ["percent_utilized", 15], ["created_at", "2019-08-08 00:26:22.587747"], ["updated_at", "2019-08-08 00:26:22.587747"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "Angular"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.595541"], ["updated_at", "2019-08-08 00:26:22.595541"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.597616"], ["updated_at", "2019-08-08 00:26:22.597616"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 1"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.599378"], ["updated_at", "2019-08-08 00:26:22.599378"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.4ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 2"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.601816"], ["updated_at", "2019-08-08 00:26:22.601816"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 3"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.604609"], ["updated_at", "2019-08-08 00:26:22.604609"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 4"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.606667"], ["updated_at", "2019-08-08 00:26:22.606667"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 5"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.608719"], ["updated_at", "2019-08-08 00:26:22.608719"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 6"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.612673"], ["updated_at", "2019-08-08 00:26:22.612673"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 7"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.616333"], ["updated_at", "2019-08-08 00:26:22.616333"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mPortfolio Create (0.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 8"], ["subtitle", "My awesome service"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.618788"], ["updated_at", "2019-08-08 00:26:22.618788"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mPortfolio Create (0.2ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Portfolio title: 0"], ["subtitle", "Ruby On Rails"], ["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 00:26:22.620694"], ["updated_at", "2019-08-08 00:26:22.620694"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = ? LIMIT ?[0m  [["subtitle", "Ruby On Rails"], ["LIMIT", 11]]
+Started GET "/portfolios" for ::1 at 2019-08-07 17:36:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 210ms (Views: 203.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-07 17:38:40 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = ?[0m  [["subtitle", "Ruby On Rails"]]
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-07 17:39:00 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = ?[0m  [["subtitle", "Angular"]]
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-07 17:43:28 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."subtitle" = ?[0m  [["subtitle", "Angular"]]
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-07 17:51:13 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/controllers/portfolios_controller.rb:56: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/portfolios_controller.rb:56: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolios" for ::1 at 2019-08-07 17:51:45 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 187ms (Views: 181.4ms | ActiveRecord: 0.6ms)
+
+
