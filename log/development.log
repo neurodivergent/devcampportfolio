@@ -4379,3 +4379,53 @@ Processing by PortfoliosController#index as HTML
 Completed 200 OK in 187ms (Views: 181.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/portfolios" for ::1 at 2019-08-08 16:50:26 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 191ms (Views: 183.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/portfolios/new" for ::1 at 2019-08-08 16:50:46 -0700
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/portfolios" for ::1 at 2019-08-08 16:50:55 -0700
+Processing by PortfoliosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a3riX2mN6UoJmYTEtwGeSGgDHqCeWT1Hlm13PWTOaXAZEEJjOsAm8f+u5whBpVFVAasM46DNUPcScfCcb89GhA==", "portfolio"=>{"title"=>"blarf", "subtitle"=>"woof", "body"=>"heeeee"}, "commit"=>"Create Portfolio"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:18
+  [1m[36mPortfolio Create (0.9ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "blarf"], ["subtitle", "woof"], ["body", "heeeee"], ["main_image", "https://via.placeholder.com/600x400"], ["thumb_image", "https://via.placeholder.com/350x200"], ["created_at", "2019-08-08 23:50:55.264395"], ["updated_at", "2019-08-08 23:50:55.264395"]]
+  ↳ app/controllers/portfolios_controller.rb:18
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:18
+Redirected to http://localhost:3000/portfolios
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-08 16:50:55 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/portfolio/12" for ::1 at 2019-08-08 16:51:08 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:43
+  Rendering portfolios/show.html.erb within layouts/application
+  Rendered portfolios/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
