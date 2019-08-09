@@ -4429,3 +4429,76 @@ Processing by PortfoliosController#show as HTML
 Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddBadgeToSkills (20190809001547)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "skills" ADD "badge" text[0m
+  ↳ db/migrate/20190809001547_add_badge_to_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190809001547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/portfolios" for ::1 at 2019-08-08 17:27:17 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/models/concerns/placeholder.rb:6: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/concerns/placeholder.rb:6: syntax error, unexpected end-of-input, expecting end
+app/models/portfolio.rb:2:in `<class:Portfolio>'
+app/models/portfolio.rb:1:in `<main>'
+app/controllers/portfolios_controller.rb:3:in `index'
+Started GET "/portfolios" for ::1 at 2019-08-08 17:27:50 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 227ms (Views: 220.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/portfolios/new" for ::1 at 2019-08-08 17:27:59 -0700
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/portfolios/new" for ::1 at 2019-08-08 17:28:07 -0700
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/portfolios" for ::1 at 2019-08-08 17:28:09 -0700
+Processing by PortfoliosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgNcDdzm8QFE4CLdcR3UXivsJer1hSi16jka3YmKwnDoafwxj6s+urLXQRGHuRtDQkQ3qcsRRQVuJZ18govthA==", "portfolio"=>{"title"=>"", "subtitle"=>"", "body"=>""}, "commit"=>"Create Portfolio"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:18
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("title", "percent_utilized", "created_at", "updated_at", "badge") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Some Skill"], ["percent_utilized", 80], ["created_at", "2019-08-09 00:28:59.244775"], ["updated_at", "2019-08-09 00:28:59.244775"], ["badge", "https://via.placeholder.com/250x250"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
