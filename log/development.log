@@ -5547,3 +5547,191 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 205ms (Views: 194.7ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/portfolios" for ::1 at 2019-08-12 04:10:38 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-08-12 04:10:40 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-08-12 04:10:42 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6lI8SuJy1Pco4nEAUi9IbAXcfkxk6Y7+iogRgIoIC6d5bcy2unUKFk91r0u7mSRvwBvLYKHNfQk+k00guFnC0g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-08-12 04:10:42 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/register" for ::1 at 2019-08-12 04:10:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for ::1 at 2019-08-12 04:13:52 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+...uffer.append=( if current_user);@output_buffer.safe_append='
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+'.freeze;     else 
+              ^~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+Started GET "/register" for ::1 at 2019-08-12 04:14:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+...ffer.append=( if current_user );@output_buffer.safe_append='
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+'.freeze;     else 
+              ^~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+Started GET "/register" for ::1 at 2019-08-12 04:16:20 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+...ffer.append=( if current_user );@output_buffer.safe_append='
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+'.freeze;     else 
+              ^~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+Started GET "/register" for ::1 at 2019-08-12 04:19:11 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+...ffer.append=( if current_user );@output_buffer.safe_append='
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+'.freeze;     else 
+              ^~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/layouts/application.html.erb:18: syntax error, unexpected else, expecting ')'
+app/views/layouts/application.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:28: syntax error, unexpected ensure, expecting ')'
+app/views/layouts/application.html.erb:30: syntax error, unexpected end, expecting ')'
+Started GET "/register" for ::1 at 2019-08-12 04:19:56 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 205ms (Views: 204.0ms | ActiveRecord: 0.0ms)
+
+
