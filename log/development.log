@@ -5913,3 +5913,206 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/register" for ::1 at 2019-08-24 21:21:08 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-24 21:22:15 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `include'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-24 21:22:31 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `include'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-24 21:25:21 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-24 21:29:45 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 01:26:42 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `include'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 01:26:53 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 01:29:19 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 02:39:04 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 02:39:04 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 03:42:45 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 03:42:45 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 05:02:17 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 05:02:17 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-25 14:23:29 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 14:23:39 -0700
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `included'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 14:29:07 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/concerns/devise_whitelist.rb:4:in `include'
+app/controllers/concerns/devise_whitelist.rb:4:in `<module:DeviseWhitelist>'
+app/controllers/concerns/devise_whitelist.rb:1:in `<main>'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/register" for ::1 at 2019-08-25 14:38:37 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 207ms (Views: 193.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2019-08-25 20:23:03 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 204ms (Views: 192.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/register" for ::1 at 2019-08-25 20:23:05 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
