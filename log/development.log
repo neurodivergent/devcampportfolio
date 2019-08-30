@@ -6116,3 +6116,177 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-26 15:33:56 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 97ms (Views: 61.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-08-26 15:33:56 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-08-29 16:15:47 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 224ms (Views: 205.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-29 16:30:40 -0700
+  
+NoMethodError (undefined method `validates_present_of' for User (call 'User.connection' to establish a connection):Class):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-08-29 16:32:06 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+...r.first_name if current_user &></h1>
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:2: unknown regexp options - vw
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: unknown regexp option - h
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+<h1>Blog Posts</h1>
+                 ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+app/views/pages/home.html.erb:2: unknown regexp options - vw
+app/views/pages/home.html.erb:4: unknown regexp option - h
+app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2019-08-29 16:34:13 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+...r.first_name if current_user &></h1>
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:2: unknown regexp options - vw
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: unknown regexp option - h
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+<h1>Blog Posts</h1>
+                 ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+app/views/pages/home.html.erb:2: unknown regexp options - vw
+app/views/pages/home.html.erb:4: unknown regexp option - h
+app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2019-08-29 16:34:41 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+...r.first_name if current_user &></h1>
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:2: unknown regexp options - vw
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: unknown regexp option - h
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+<h1>Blog Posts</h1>
+                 ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+app/views/pages/home.html.erb:2: unknown regexp options - vw
+app/views/pages/home.html.erb:4: unknown regexp option - h
+app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2019-08-29 16:34:43 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+...r.first_name if current_user &></h1>
+...                              ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:2: unknown regexp options - vw
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: unknown regexp option - h
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+<h1>Blog Posts</h1>
+                 ^
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/pages/home.html.erb:1: syntax error, unexpected '>'
+app/views/pages/home.html.erb:2: unknown regexp options - vw
+app/views/pages/home.html.erb:4: unknown regexp option - h
+app/views/pages/home.html.erb:4: syntax error, unexpected tINTEGER, expecting ')'
+app/views/pages/home.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/pages/home.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/" for ::1 at 2019-08-29 16:35:34 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 180ms (Views: 177.4ms | ActiveRecord: 1.2ms)
+
+
