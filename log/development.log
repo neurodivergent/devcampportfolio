@@ -6290,3 +6290,199 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 180ms (Views: 177.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2019-08-29 17:27:27 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 233ms (Views: 219.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-08-29 17:31:39 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 171ms (Views: 160.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-08-29 17:31:41 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-29 18:55:53 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (1.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 69ms (Views: 53.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/portfolio/4" for ::1 at 2019-08-29 18:56:03 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.3ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/portfolio/4" for ::1 at 2019-08-29 18:59:28 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `inspecgt' for #<ActionController::Parameters:0x00007f93f89793f0>):
+    14: 
+    15: <hr>
+    16: 
+    17: <%= params.inspecgt %>
+  
+app/views/portfolios/show.html.erb:17:in `_app_views_portfolios_show_html_erb___1079651586296198094_70136753855620'
+Started GET "/portfolio/4" for ::1 at 2019-08-29 18:59:38 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/portfolio/4" for ::1 at 2019-08-29 19:01:40 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-08-29 21:41:22 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.9ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:5
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 44ms (Views: 35.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-08-29 21:41:32 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/portfolio/4" for ::1 at 2019-08-29 21:41:36 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.3ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/portfolio/4" for ::1 at 2019-08-29 23:04:00 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/portfolio/4?q=twitter" for ::1 at 2019-08-29 23:08:36 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"q"=>"twitter", "id"=>"4"}
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:32: syntax error, unexpected ensure, expecting end
+          ensure
+          ^~~~~~
+/Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/views/layouts/application.html.erb:34: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/layouts/application.html.erb:32: syntax error, unexpected ensure, expecting end
+app/views/layouts/application.html.erb:34: syntax error, unexpected end-of-input, expecting end
+Started GET "/portfolio/4?q=twitter" for ::1 at 2019-08-29 23:10:06 -0700
+Processing by PortfoliosController#show as HTML
+  Parameters: {"q"=>"twitter", "id"=>"4"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:44
+  Rendering portfolios/show.html.erb within layouts/application
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = ?[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:11
+  Rendered portfolios/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for ::1 at 2019-08-29 23:11:04 -0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered blogs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs" for ::1 at 2019-08-29 23:11:43 -0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered blogs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
