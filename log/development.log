@@ -8829,3 +8829,163 @@ Processing by PagesController#about as HTML
 Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <main> at /Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/models/application_record.rb:1)
+Started GET "/blogs" for ::1 at 2019-09-11 20:17:55 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/blog
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered collection of blogs/_blog.html.erb [20 times] (3.3ms)
+  Rendered blogs/index.html.erb within layouts/blog (14.5ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+Completed 200 OK in 251ms (Views: 232.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/blogs" for ::1 at 2019-09-11 20:17:55 -0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/blog
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:15
+  Rendered collection of blogs/_blog.html.erb [20 times] (2.5ms)
+  Rendered blogs/index.html.erb within layouts/blog (3.8ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <main> at /Users/oni/Documents/code/ruby/jordan/rails/devcampportfolio/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-09-16 14:21:55 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/oni/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (1.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (15.6ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+Completed 200 OK in 238ms (Views: 206.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 14:21:55 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 15:49:28 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.5ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (38.7ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 15:49:28 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (3.2ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 16:49:50 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 16:49:50 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-16 16:49:51 -0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/pages/home.html.erb:9
+  Rendered pages/home.html.erb within layouts/application (4.6ms)
+  Rendered shared/_nav.html.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-09-16 16:49:53 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [26 times] (5.0ms)
+  Rendered portfolios/index.html.erb within layouts/portfolio (20.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/portfolios" for ::1 at 2019-09-16 16:49:53 -0700
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [26 times] (3.5ms)
+  Rendered portfolios/index.html.erb within layouts/portfolio (5.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
